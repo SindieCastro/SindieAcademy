@@ -1,121 +1,243 @@
-```html
+```html id="xj4v92"
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SindieTech LLC</title>
+  <title>SindieTech LLC | Remote Support & Automation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #38bdf8;
+      --accent-light: #7dd3fc;
+      --white: #f8fafc;
+      --gray: #cbd5e1;
+      --success: #22c55e;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      background-color: #0f172a;
-      color: #f8fafc;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background: var(--primary);
+      color: var(--white);
+      line-height: 1.7;
     }
 
     header {
-      background: linear-gradient(135deg, #2563eb, #1e293b);
-      padding: 80px 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.95)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop')
+        center/cover no-repeat;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
+    .hero {
+      max-width: 850px;
     }
 
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
+    .logo {
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--gray);
+      margin-bottom: 35px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 25px;
-      padding: 12px 24px;
-      background: #38bdf8;
-      color: #0f172a;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 14px 28px;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      font-weight: 700;
       transition: 0.3s ease;
+      margin: 10px;
     }
 
     .btn:hover {
-      background: #7dd3fc;
+      background: var(--accent-light);
+      transform: translateY(-2px);
     }
 
     section {
-      padding: 70px 20px;
-      max-width: 1100px;
+      padding: 90px 20px;
+      max-width: 1200px;
       margin: auto;
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.2rem;
-      color: #38bdf8;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    .section-text {
+      text-align: center;
+      max-width: 800px;
+      margin: auto auto 60px auto;
+      color: var(--gray);
+      font-size: 1.1rem;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
     .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
+      background: var(--secondary);
+      padding: 30px;
+      border-radius: 14px;
+      transition: 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      border-color: var(--accent);
     }
 
     .card h3 {
       margin-bottom: 15px;
-      color: #7dd3fc;
+      color: var(--accent-light);
+      font-size: 1.3rem;
     }
 
-    .about,
-    .contact,
-    .cta {
+    .card p {
+      color: var(--gray);
+    }
+
+    .why-us {
+      background: #111827;
+      border-radius: 20px;
+      padding: 60px;
       text-align: center;
     }
 
-    .about p,
-    .cta p,
-    .contact p {
-      max-width: 800px;
-      margin: auto;
+    .why-us ul {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    .why-us li {
+      margin: 15px 0;
+      color: var(--gray);
       font-size: 1.1rem;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+      margin-bottom: 20px;
+      color: var(--accent-light);
+    }
+
+    .contact-info p {
+      margin-bottom: 15px;
+      color: var(--gray);
+    }
+
+    form {
+      background: var(--secondary);
+      padding: 30px;
+      border-radius: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 18px;
+      border: none;
+      border-radius: 8px;
+      background: #334155;
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 2px solid var(--accent);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: var(--accent);
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--accent-light);
     }
 
     footer {
       text-align: center;
-      padding: 25px;
+      padding: 35px 20px;
       background: #020617;
       color: #94a3b8;
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
+    @media(max-width: 768px) {
+      h1 {
+        font-size: 2.8rem;
       }
 
-      header p {
-        font-size: 1rem;
+      .hero p {
+        font-size: 1.05rem;
+      }
+
+      .why-us {
+        padding: 40px 25px;
       }
     }
   </style>
@@ -123,116 +245,178 @@
 
 <body>
 
-  <header>
-    <h1>SindieTech LLC</h1>
-    <p>
-      Professional remote support, freelance data services,
-      automation solutions, and monthly reporting for small businesses.
-    </p>
+<header>
+  <div class="hero">
+    <div class="logo">SindieTech LLC</div>
 
-    <a href="#contact" class="btn">Get Started</a>
-  </header>
-
-  <section class="about">
-    <h2>About Us</h2>
+    <h1>
+      Remote Support & Business Automation
+    </h1>
 
     <p>
-      SindieTech LLC helps small businesses streamline operations through
-      remote support services, data organization, reporting solutions,
-      and workflow automation. We provide flexible, cost-effective support
-      without the expense of hiring full-time staff.
+      Helping small businesses streamline operations with
+      remote support, data services, reporting solutions,
+      and Microsoft Power Automate workflows.
     </p>
-  </section>
 
-  <section>
-    <h2>Our Services</h2>
+    <a href="#services" class="btn">Explore Services</a>
+    <a href="#contact" class="btn">Contact Us</a>
+  </div>
+</header>
 
-    <div class="services">
+<section id="about">
+  <h2>About SindieTech</h2>
 
-      <div class="card">
-        <h3>Remote Support</h3>
-        <p>
-          Reliable part-time virtual support for administrative tasks,
-          spreadsheet management, scheduling, document organization,
-          and business operations.
-        </p>
-      </div>
+  <p class="section-text">
+    SindieTech LLC provides reliable remote business support,
+    reporting solutions, workflow automation, and freelance
+    data services tailored for small businesses and growing teams.
+    Our mission is to help businesses save time, improve efficiency,
+    and stay organized through smart digital solutions.
+  </p>
+</section>
 
-      <div class="card">
-        <h3>Freelance Data Services</h3>
-        <p>
-          Data entry, cleanup, formatting, reporting, database updates,
-          Excel spreadsheet management, and business data organization.
-        </p>
-      </div>
+<section id="services">
+  <h2>Our Services</h2>
 
-      <div class="card">
-        <h3>Monthly Reporting</h3>
-        <p>
-          Customized monthly business reports, KPI tracking,
-          operational summaries, and reporting dashboards
-          tailored to your business needs.
-        </p>
-      </div>
+  <div class="services">
 
-      <div class="card">
-        <h3>Power Automate Solutions</h3>
-        <p>
-          Automate repetitive business processes using Microsoft Power Automate.
-          Save time with workflow automation, approvals, notifications,
-          file management, and recurring task automation.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Business Automation</h3>
-        <p>
-          Improve efficiency with automated workflows, digital processes,
-          reporting automation, and streamlined operations
-          for small businesses and remote teams.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Excel & Reporting Tools</h3>
-        <p>
-          Professional spreadsheet solutions, data visualization,
-          dashboards, formulas, tracking systems,
-          and reporting templates.
-        </p>
-      </div>
-
+    <div class="card">
+      <h3>Remote Administrative Support</h3>
+      <p>
+        Professional virtual assistance for scheduling,
+        organization, documentation, spreadsheets,
+        and day-to-day operations.
+      </p>
     </div>
-  </section>
 
-  <section class="cta">
-    <h2>Why Choose SindieTech LLC?</h2>
+    <div class="card">
+      <h3>Freelance Data Services</h3>
+      <p>
+        Data cleanup, organization, reporting,
+        spreadsheet management, and structured
+        business data solutions.
+      </p>
+    </div>
 
-    <p>
-      We provide dependable support, automation expertise,
-      and business reporting solutions designed specifically
-      for small businesses looking to grow efficiently.
-    </p>
+    <div class="card">
+      <h3>Monthly Reporting</h3>
+      <p>
+        Customized KPI tracking, operational summaries,
+        business insights, and recurring monthly reports.
+      </p>
+    </div>
 
-    <a href="#contact" class="btn">Schedule a Consultation</a>
-  </section>
+    <div class="card">
+      <h3>Power Automate Workflows</h3>
+      <p>
+        Automate repetitive tasks using Microsoft Power Automate,
+        including approvals, reminders, notifications,
+        file management, and workflow optimization.
+      </p>
+    </div>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
+    <div class="card">
+      <h3>Business Process Automation</h3>
+      <p>
+        Streamline business operations through digital workflows,
+        automation consulting, and productivity systems.
+      </p>
+    </div>
 
-    <p>Email: info@sindietech.com</p>
-    <p>Phone: (555) 555-5555</p>
-    <p>Remote Services Available Nationwide</p>
+    <div class="card">
+      <h3>Excel Dashboards & Tools</h3>
+      <p>
+        Interactive spreadsheets, dashboards,
+        formulas, reporting templates,
+        and performance tracking systems.
+      </p>
+    </div>
 
-    <a href="mailto:info@sindietech.com" class="btn">
-      Email Us
-    </a>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2026 SindieTech LLC. All Rights Reserved.</p>
-  </footer>
+<section>
+  <div class="why-us">
+    <h2>Why Businesses Choose Us</h2>
+
+    <ul>
+      <li>✔ Flexible Part-Time Support</li>
+      <li>✔ Affordable Business Solutions</li>
+      <li>✔ Remote Convenience</li>
+      <li>✔ Workflow Automation Expertise</li>
+      <li>✔ Professional Reporting Services</li>
+      <li>✔ Tailored Small Business Support</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <div class="contact-container">
+
+    <div class="contact-info">
+      <h3>Let's Work Together</h3>
+
+      <p>
+        Ready to improve efficiency and simplify your operations?
+        Reach out today to discuss your business needs.
+      </p>
+
+      <p><strong>Email:</strong> info@sindietech.com</p>
+      <p><strong>Phone:</strong> (555) 555-5555</p>
+      <p><strong>Availability:</strong> Remote Services Nationwide</p>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send a Message</h3>
+
+      <form action="https://formsubmit.co/info@sindietech.com" method="POST">
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+
+        <input
+          type="text"
+          name="company"
+          placeholder="Company Name"
+        />
+
+        <textarea
+          name="message"
+          placeholder="Tell us about your project or business needs..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>
+    © 2026 SindieTech LLC • Remote Support & Automation Services
+  </p>
+</footer>
 
 </body>
 </html>
 ```
+
